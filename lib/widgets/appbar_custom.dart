@@ -107,7 +107,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         const PopupMenuDivider(height: 0),
         const PopupMenuItem<String>(
-          value: 'squatInteraction',
+          value: 'squat',
           child: Text(
             'Perhitungan Squat',
             style: TextStyle(color: AppColor.white),

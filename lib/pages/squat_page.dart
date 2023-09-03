@@ -153,16 +153,27 @@ class _SquatPageState extends State<SquatPage> {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
-                              setState(() {
-                                squatResult = (2 * blockCoefficient) *
-                                    shipSpeed *
-                                    shipSpeed /
-                                    100;
-                              });
+                              if (blockCoefficientController.text.isEmpty ||
+                                  shipSpeedController.text.isEmpty) {
+                                // Tampilkan pesan kesalahan jika salah satu input kosong.
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                        "Mohon isi kedua input terlebih dahulu."),
+                                  ),
+                                );
+                              } else {
+                                // Hitung squatResult jika kedua input telah diisi.
+                                setState(() {
+                                  squatResult = (2 * blockCoefficient) *
+                                      shipSpeed *
+                                      shipSpeed /
+                                      100;
+                                });
+                              }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  Colors.green, // Set the button color to red.
+                              backgroundColor: Colors.green,
                             ),
                             child: Text(
                               "Hitung Squat",
@@ -200,9 +211,10 @@ class _SquatPageState extends State<SquatPage> {
                           CustomButton(
                               label: "Beranda",
                               onTap: () {
-                                Navigator.pushNamed(
+                                Navigator.pushNamedAndRemoveUntil(
                                   context,
                                   AppRoute.getStarted,
+                                  (Route<dynamic> route) => false,
                                 );
                               }),
                         ],

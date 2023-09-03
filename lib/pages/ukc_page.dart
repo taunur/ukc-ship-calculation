@@ -133,14 +133,26 @@ class _UKCPageState extends State<UKCPage> {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
-                              setState(() {
-                                ukcResult =
-                                    mappedDepth + tideHeight - staticDraft;
-                              });
+                              if (mappedDepthController.text.isEmpty ||
+                                  tideHeightController.text.isEmpty ||
+                                  staticDraftController.text.isEmpty) {
+                                // Tampilkan pesan kesalahan jika salah satu input kosong.
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                        "Mohon isi semua input terlebih dahulu."),
+                                  ),
+                                );
+                              } else {
+                                // Hitung UKC jika semua input telah diisi.
+                                setState(() {
+                                  ukcResult =
+                                      mappedDepth + tideHeight - staticDraft;
+                                });
+                              }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  Colors.green, // Set the button color to red.
+                              backgroundColor: Colors.green,
                             ),
                             child: Text(
                               "Hitung UKC",
