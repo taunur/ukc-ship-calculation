@@ -16,6 +16,8 @@ class SquatPage extends StatefulWidget {
 class _SquatPageState extends State<SquatPage> {
   TextEditingController blockCoefficientController = TextEditingController();
   TextEditingController shipSpeedController = TextEditingController();
+  FocusNode blockCoefficientFocus = FocusNode();
+  FocusNode shipSpeedFocus = FocusNode();
 
   double blockCoefficient = 0.0;
   double shipSpeed = 0.0;
@@ -101,6 +103,7 @@ class _SquatPageState extends State<SquatPage> {
                     ),
                     const SizedBox(height: 24),
                     TextField(
+                      focusNode: blockCoefficientFocus,
                       controller: blockCoefficientController,
                       decoration: const InputDecoration(
                         labelText: "Koefisien blok kapal (Cb)",
@@ -114,6 +117,7 @@ class _SquatPageState extends State<SquatPage> {
                     ),
                     TextField(
                       controller: shipSpeedController,
+                      focusNode: shipSpeedFocus,
                       decoration: const InputDecoration(
                         labelText: "Kecepatan kapal (V)",
                       ),
@@ -163,6 +167,10 @@ class _SquatPageState extends State<SquatPage> {
                                   ),
                                 );
                               } else {
+                                // Menutup keyboard dengan memanggil unfocus pada FocusNode.
+                                blockCoefficientFocus.unfocus();
+                                shipSpeedFocus.unfocus();
+
                                 // Hitung squatResult jika kedua input telah diisi.
                                 setState(() {
                                   squatResult = (2 * blockCoefficient) *

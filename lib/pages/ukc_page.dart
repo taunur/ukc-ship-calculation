@@ -17,6 +17,9 @@ class _UKCPageState extends State<UKCPage> {
   TextEditingController mappedDepthController = TextEditingController();
   TextEditingController tideHeightController = TextEditingController();
   TextEditingController staticDraftController = TextEditingController();
+  FocusNode mappedDepthFocus = FocusNode();
+  FocusNode tideHeightFocus = FocusNode();
+  FocusNode staticDraftFocus = FocusNode();
 
   double mappedDepth = 0.0; // Kedalaman Air yang Dipetakan
   double tideHeight = 0.0; // Ketinggian Air Pasang
@@ -74,6 +77,7 @@ class _UKCPageState extends State<UKCPage> {
                         labelText: "Kedalaman Air yang Dipetakan (m)",
                       ),
                       keyboardType: TextInputType.number,
+                      focusNode: mappedDepthFocus, // Tambahkan focusNode ini
                       onChanged: (value) {
                         setState(() {
                           mappedDepth = double.tryParse(value) ?? 0.0;
@@ -86,6 +90,7 @@ class _UKCPageState extends State<UKCPage> {
                         labelText: "Ketinggian Air Pasang (m)",
                       ),
                       keyboardType: TextInputType.number,
+                      focusNode: tideHeightFocus, // Tambahkan focusNode ini
                       onChanged: (value) {
                         setState(() {
                           tideHeight = double.tryParse(value) ?? 0.0;
@@ -98,6 +103,7 @@ class _UKCPageState extends State<UKCPage> {
                         labelText: "Draf Dalam Statik (m)",
                       ),
                       keyboardType: TextInputType.number,
+                      focusNode: staticDraftFocus, // Tambahkan focusNode ini
                       onChanged: (value) {
                         setState(() {
                           staticDraft = double.tryParse(value) ?? 0.0;
@@ -144,6 +150,11 @@ class _UKCPageState extends State<UKCPage> {
                                   ),
                                 );
                               } else {
+                                // Menutup keyboard dengan memanggil unfocus pada FocusNode.
+                                mappedDepthFocus.unfocus();
+                                tideHeightFocus.unfocus();
+                                staticDraftFocus.unfocus();
+
                                 // Hitung UKC jika semua input telah diisi.
                                 setState(() {
                                   ukcResult =

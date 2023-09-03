@@ -57,7 +57,7 @@ class AboutPage extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Efek-efek dari gerakan jongkok:",
+                  "Efek-efek dari gerakan squat:",
                   style: blackTextStyle.copyWith(
                     fontWeight: bold,
                     decoration: TextDecoration.underline,

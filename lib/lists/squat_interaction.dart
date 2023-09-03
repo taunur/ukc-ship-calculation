@@ -71,9 +71,9 @@ List<Map<String, dynamic>> squatInteractions = [
   },
   {
     'title': "Faktor-faktor yang Mengatur Squat Kapal",
-    'desc': "Faktor-faktor yang mengatur oleng kapal adalah:",
+    'desc': "Faktor-faktor yang mengatur squat kapal adalah:",
     'items': [
-      "Kecepatan kapal (Faktor Utama). Jongkok berbanding lurus dengan kecepatan kuadrat.",
+      "Kecepatan kapal (Faktor Utama). Squat berbanding lurus dengan kecepatan kuadrat.",
       "Kedalaman air: berbanding terbalik.",
       "Ketinggian alur: berbanding terbalik.",
       "Koefisien Blok (rasio volume kapal yang tercelup yang berkaitan dengan panjang, lebar, dan draft saluran air): berbanding lurus.",
