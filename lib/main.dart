@@ -5,6 +5,9 @@ import 'package:ukc_ship/config/app.routes.dart';
 import 'package:ukc_ship/pages/about_page.dart';
 import 'package:ukc_ship/pages/abstract_page.dart';
 import 'package:ukc_ship/pages/get_started_page.dart';
+import 'package:ukc_ship/pages/squat_explain_page.dart';
+import 'package:ukc_ship/pages/squat_interaction_page.dart';
+import 'package:ukc_ship/pages/squat_page.dart';
 import 'package:ukc_ship/pages/ukc_explain_page.dart';
 import 'package:ukc_ship/pages/ukc_page.dart';
 
@@ -37,6 +40,9 @@ class UkcCalculatorApp extends StatelessWidget {
         AppRoute.about: (context) => const AboutPage(),
         AppRoute.ukcE: (context) => const UKCExplainPage(),
         AppRoute.ukc: (context) => const UKCPage(),
+        AppRoute.squatE: (context) => const SquatExplainPage(),
+        AppRoute.squatInteraction: (context) => const SquatInteractionPage(),
+        AppRoute.squat: (context) => const SquatPage(),
       },
     );
   }

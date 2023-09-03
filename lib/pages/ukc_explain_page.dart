@@ -14,7 +14,7 @@ class UKCExplainPage extends StatelessWidget {
     List<String> listFaktor = [
       "Pengamatan/perhitungan draft Termasuk perkiraan hogaing dan sagging",
       "Peningkatan draft karena gerakan naik-turun, pitching, dan rolling",
-      "Efek-efek dari gerakan jongkok",
+      "Efek-efek dari gerakan squat",
       "Peningkatan draft karena perubahan densitas air Kedalaman minimum yang dipetakan yang tersedia",
       "Ketinggian air pasang yang diperkirakan (minimum yang tersedia selama jendela transit yang direncanakan)",
       "Keadaan laut dan gelombang"

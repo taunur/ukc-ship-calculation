@@ -6,6 +6,10 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
   color: AppColor.black,
 );
 
+TextStyle primaryTextStyle = GoogleFonts.poppins(
+  color: AppColor.primary,
+);
+
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   color: AppColor.white,
 );

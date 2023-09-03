@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ukc_ship/config/app.color.dart';
 import 'package:ukc_ship/config/app.font.dart';
 import 'package:ukc_ship/config/app.routes.dart';
+import 'package:ukc_ship/lists/about_list.dart';
 import 'package:ukc_ship/widgets/appbar_custom.dart';
 import 'package:ukc_ship/widgets/double_button_custom.dart';
 import 'package:ukc_ship/widgets/title_custom.dart';
@@ -11,24 +12,6 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> listUKC = [
-      "Vessel's trim and list characteristic",
-      "Depth of the transit area",
-      "Depth at the facility or anchorage",
-      "Tide and current conditions",
-      "Weather impact on water depth"
-    ];
-
-    List<String> listCalculating = [
-      "Pengamatan/perhitungan draft termasuk perkiraan hogging dan sagging",
-      "Peningkatan draft karena gerakan naik, pitching, dan rolling",
-    ];
-
-    List<String> listSquat = [
-      "Peningkatan draf karena perubahan densitas air - Kedalaman minimum yang dipetakan yang tersedia Ketinggian pasang yang diprediksi (minimum yang tersedia selama jendela transit yang direncanakan)",
-      "Keadaan laut dan gelombang",
-    ];
-
     return Scaffold(
       appBar: CustomAppbar(title: "Tentang UKC", context: context),
       body: SingleChildScrollView(
@@ -42,8 +25,8 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
               richText(
-                'UNDER-KEEL CLEARANCE (UKC): ',
-                'berarti jarak bebas minimum yang tersedia antara titik terdalam pada kapal dan dasar di air tenang. Nakhoda dan pilot harus menggunakan draft terdalam kapal mereka di air tenang saat menghitung UKC. Mereka harus menerapkan kelonggaran plus atau minus untuk air pasang ketika menghitung kedalaman air, dan mempertimbangkan faktor-faktor berikut ini:',
+                'UNDER-KEEL CLEARANCE (UKC):',
+                ' berarti jarak bebas minimum yang tersedia antara titik terdalam pada kapal dan dasar di air tenang. Nakhoda dan pilot harus menggunakan draft terdalam kapal mereka di air tenang saat menghitung UKC. Mereka harus menerapkan kelonggaran plus atau minus untuk air pasang ketika menghitung kedalaman air, dan mempertimbangkan faktor-faktor berikut ini:',
               ),
               const SizedBox(height: 8),
               ListView.builder(

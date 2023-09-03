@@ -38,6 +38,15 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
           case 'ukc':
             Navigator.pushNamed(context, AppRoute.ukc);
             break;
+          case 'squatE':
+            Navigator.pushNamed(context, AppRoute.squatE);
+            break;
+          case 'squatInteraction':
+            Navigator.pushNamed(context, AppRoute.squatInteraction);
+            break;
+          case 'squat':
+            Navigator.pushNamed(context, AppRoute.squat);
+            break;
         }
       },
       itemBuilder: (BuildContext context) => [
@@ -77,6 +86,30 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
           value: 'ukc',
           child: Text(
             'Perhitungan UKC',
+            style: TextStyle(color: AppColor.white),
+          ),
+        ),
+        const PopupMenuDivider(height: 0),
+        const PopupMenuItem<String>(
+          value: 'squatE',
+          child: Text(
+            'Efek Squat',
+            style: TextStyle(color: AppColor.white),
+          ),
+        ),
+        const PopupMenuDivider(height: 0),
+        const PopupMenuItem<String>(
+          value: 'squatInteraction',
+          child: Text(
+            'Interaksi Squat',
+            style: TextStyle(color: AppColor.white),
+          ),
+        ),
+        const PopupMenuDivider(height: 0),
+        const PopupMenuItem<String>(
+          value: 'squatInteraction',
+          child: Text(
+            'Perhitungan Squat',
             style: TextStyle(color: AppColor.white),
           ),
         ),

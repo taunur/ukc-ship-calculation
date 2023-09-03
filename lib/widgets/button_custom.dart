@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
             alignment: const Alignment(0, 0.7),
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(16),
                 boxShadow: const [
                   BoxShadow(
                     color: AppColor.primary,
@@ -41,7 +41,7 @@ class CustomButton extends StatelessWidget {
                 horizontal: 16,
                 vertical: 10,
               ),
-              margin: const EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(label),
             ),
           ),
