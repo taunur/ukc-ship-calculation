@@ -67,7 +67,7 @@ class _SquatPageState extends State<SquatPage> {
                             ),
                           ),
                           TextSpan(
-                            text: '2',
+                            text: '(2',
                             style: TextStyle(
                               fontSize: 18,
                               color: AppColor.primary,
@@ -75,7 +75,7 @@ class _SquatPageState extends State<SquatPage> {
                             ),
                           ),
                           TextSpan(
-                            text: ' * CB * V',
+                            text: ' * CB) * V',
                             style: TextStyle(
                               fontSize: 18,
                               color: AppColor.primary,

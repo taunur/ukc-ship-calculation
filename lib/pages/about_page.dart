@@ -25,21 +25,21 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
               richText(
-                'UNDER-KEEL CLEARANCE (UKC):',
-                ' berarti jarak bebas minimum yang tersedia antara titik terdalam pada kapal dan dasar di air tenang. Nakhoda dan pilot harus menggunakan draft terdalam kapal mereka di air tenang saat menghitung UKC. Mereka harus menerapkan kelonggaran plus atau minus untuk air pasang ketika menghitung kedalaman air, dan mempertimbangkan faktor-faktor berikut ini:',
+                aboutUkc[0]['title'],
+                aboutUkc[0]['desc'],
               ),
               const SizedBox(height: 8),
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: listUKC.length,
+                itemCount: aboutUkc[0]['items'].length,
                 itemBuilder: (BuildContext ctx, int index) {
                   final itemIndex = index + 1;
                   return Row(
                     children: [
                       Text("$itemIndex. "),
                       Text(
-                        listUKC[index],
+                        aboutUkc[0]['items'][index],
                         style: blackTextStyle,
                       ),
                     ],
@@ -48,16 +48,16 @@ class AboutPage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               richText(
-                'Menghitung UKC:',
-                ' Saat menghitung UKC, faktor-faktor spesifik harus diperhitungkan selama perencanaan pelayaran dan dicatat sebelum melanjutkan perjalanan.',
+                aboutUkc[1]['title'],
+                aboutUkc[1]['desc'],
               ),
               const SizedBox(height: 8),
-              listTile(listCalculating),
+              listTile(aboutUkc[1]['items']),
               const SizedBox(height: 8),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Efek-efek dari gerakan squat:",
+                  aboutUkc[2]['title'],
                   style: blackTextStyle.copyWith(
                     fontWeight: bold,
                     decoration: TextDecoration.underline,
@@ -65,7 +65,7 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              listTile(listSquat),
+              listTile(aboutUkc[2]['items']),
               const SizedBox(height: 8),
               Image.asset(
                 "assets/img_ukc.png",

@@ -124,7 +124,16 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title),
+          Row(
+            children: [
+              Image.asset(
+                "assets/logo_poltekpel.png",
+                width: 28,
+              ),
+              const SizedBox(width: 12),
+              Text(title),
+            ],
+          ),
           buildPopupMenuButton(),
         ],
       ),
